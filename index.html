@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime Worldwide</title>
+    <link rel="icon" type="image/png" href="./assets/icons8-tv-box-flaticons-flat-96.png" sizes="32x32">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <script defer src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
+    <script defer src="src/waypoints/noframework.waypoints.min.js"></script>
+    <script type="module" src="src/main.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="loading_screen" class="d-flex justify-content-center align-items-center">
+    <div class="fs-1 fw-bold">Loading App...</div>
+</div>
+    <header class="container text-center mb-5">
+        <h1>Global Analysis of Animated Shows</h1>
+        <div class="authors">
+            <div>Amadeus Salazar</div>
+            <div>Brenda Kong</div>
+            <div>Riwaj Khadka</div>
+            <div>Alex Labenz</div>
+        </div>
+    </header>
+    <main class="container pt-6">
+        <div style="height: 30vh">
+            <p>This project will take a detailed look at the growth and development
+                of animated television over the past 70 to 80 years. With the rapid
+                increase in popularity of television and animated shows over the
+                past couple of decades, it is only natural that the production of
+                these shows would evolve over time. This kind of evolution includes
+                 many different factors and not necessarily ones strictly directly
+                 linked to the series, like the animation technique used or how many
+                 years it aired. Other elements will be explored as well, including
+                 the influx in the number of shows produced by a specific country
+                 overtime or which channels dominated with the most shows aired
+                 during certain timeframes. </p>
+            <div id="giphy_wrapper">
+                <img class="giphy-width"
+                     src="https://media.giphy.com/media/aiY3b1eT6ks1oPPhDq/giphy.gif"
+                     alt="Micky Mouse">
+
+                <img class="giphy-width"
+                     src="https://media.giphy.com/media/l4FsA5Z38EmvUTl9m/giphy.gif"
+                     alt="Astro Boy">
+
+                <img class="giphy-width"
+                     src="https://media.giphy.com/media/dJoJCypWihblC/giphy.gif"
+                     alt="Dragon Ball">
+
+                <img class="giphy-width"
+                     src="https://media.giphy.com/media/tEcIyVc6ukQV2eb86t/giphy.gif"
+                     alt="Demon Slayer">
+            </div>
+            <div class="pt-4 text-center">
+                <a
+                  target="_blank"
+                  href="https://giphy.com/gifs/mickey90-anniversary-mickey-90-aiY3b1eT6ks1oPPhDq">
+                    Illustrations by GIPHY
+                </a>
+            </div>
+        </div>
+        <div class="vh-25"></div>
+        <div id="visualizations" class="d-flex h-100">
+            <div class="vw-50">
+                <section id="bubble_section" class="col viz-section" data-chart-code="BUBBLE_CHART">
+                    <div class="vh-100">
+                        <div class="h-100">
+                            <div class="h-10">
+                                <div id="bubble_title"
+                                     style="opacity: 0"
+                                     class="fs-1 pt-4">Total Shows by Country</div>
+                            </div>
+                            <div id="bubble_chart_wrapper" class="h-90">
+                                <svg id="bubble_chart"></svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="viz_6" class="col viz-section" data-chart-code="INNOVATIVE_CHART">
+                    <div class="vh-100">
+                        <div class="h-100">
+                            <div class="h-10">
+                                <div id="map_title" style="opacity: 0" class="fs-1 pt-4">Map by number of shows</div>
+                            </div>
+
+                            <div id="world_map_tooltip">
+
+                            </div>
+                            <div class="vh-100">Sort By Year: 1948
+                                <input type="range" min="1948" max="2022" value="2022" class="slider" id="map-y-slider">2022
+
+
+                                <div id="world_chart_wrapper" class="h-95">
+                                    <svg id="world_chart"></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="lollipop_section" class="col viz-section" data-chart-code="LOLLIPOP_CHART">
+                    <div class="vh-100">
+                        <div class="h-100">
+                            <div class="h-10">
+                                <div id="lollipop_title" style="opacity: 0" class="fs-1 pt-4">
+                                    Number of Shows by Network</div>
+                            </div>
+                            <div class="h-20" id="chart1"></div>
+                            <div class="h-20" id="chart2"></div>
+                        </div>
+                    </div>
+                </section>
+                <section id="pie_section" class="col viz-section" data-chart-code="PIE_CHART">
+                    <div class="vh-100">
+                        <div class="h-100">
+                            <div class="h-20">
+                                <div id="pie_title" style="opacity: 0" class="fs-1 pt-4">
+                                    Animation Techniques
+                                </div>
+                            </div>
+                            <div id="pie_chart_wrapper" class="h-100"></div>
+                        </div>
+
+                    </div>
+                </section>
+                <section id="area_section" class="col viz-section" data-chart-code="AREA_CHART">
+                    <div class="vh-100">
+                        <div class="vh-100">
+                            <div class="h-100">
+                                <div class="h-20">
+                                    <div id="area_title" style="opacity: 0" class="fs-1 pt-4">
+                                        Animation Techniques over Time</div>
+                                </div>
+                                <div id="area_chart_wrapper" class="h-90">
+                                    <svg id="area_chart"></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="scatter_section" class="col viz-section" data-chart-code="SCATTER_CHART">
+                    <div class="vh-100">
+                        <div class="h-100">
+                            <div class="h-20">
+                                <div id="scatter_title" style="opacity: 0" class="fs-1 pt-4">
+                                    Number of Episodes and Years Aired
+                                </div>
+                            </div>
+                            <div id="scatter_chart_wrapper" class="h-90">
+                                <svg id="scatter_chart"></svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col">
+                <div id="viz_description" class="text-center sticky-middle"></div>
+            </div>
+        </div>
+        <div class="vh-25"></div>
+        <section id="conclusion">
+            <h4>Conclusion</h4>
+            <p>
+                The dataset itself provides a very surface-level understanding of each animated series as it only shows that series’ attributes and neglects to show the implications that come with the overall dataset. As seen by the visualizations used, breaking down the dataset and focusing on only a couple of attributes at a time can help make certain relationships clearer. For example, the number of shows attribute coupled with the country attribute and the channel attribute reveals that the U.S leads in total shows released. Moreover, out of the top 10 channels by number of shows, the majority of the channels come from the U.S.
+                We’ve learned that the U.S. has released the most amount of animated shows globally. Additionally, the U.S. contains the majority of the top 10 most productive channels.
+                Ostensibly, the most dominant animation technique has been the traditional technique. However, CGI has gained popularity faster over the past 80 years. Could this trend be a possible indicator of the next dominant animation technique?
+                Lastly, in the scatter chart we saw that the majority of shows last 1-18 years and air around 150 episodes.
+            </p>
+        </section>
+    </main>
+    <footer class="container">
+        <h4>References</h4>
+        <a target="_blank" href="https://icons8.com/icon/115361/tv">TV</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </footer>
+    <div id="bubble_tooltip" class="globalTooltip"></div>
+    <div id="scatter_tooltip" class="globalTooltip"></div>
+</body>
+</html>
